@@ -5,8 +5,8 @@ class FloatingText:
         self.font = pygame.font.SysFont(None, 24)
         self.image = self.font.render(text, True, color)
         self.rect = self.image.get_rect(center=(x, y))
-        self.lifetime = 60  # frames a mostrar (~1 seg a 60 FPS)
-        self.velocity = -1  # sube lentamente
+        self.lifetime = 60
+        self.velocity = -1
 
     def update(self):
         self.rect.y += self.velocity

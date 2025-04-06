@@ -11,7 +11,7 @@ from game.enemy import Enemy
 from game.floating_text import FloatingText
 from game.inventory import Inventory
 
-# --- FUNCIÓN PARA RECOMPENSAS ALEATORIAS ---
+# Recompensas aleatorias
 def get_random_reward():
     categories = {
         "arma": ["Espada mágica", "Hacha de cazador", "Cuchillo de cazador"],
@@ -30,7 +30,6 @@ def get_random_reward():
     item = random.choices(options, weights=[weights[o] for o in options])[0]
     return category, item
 
-# Inicializar PyGame
 pygame.init()
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -64,7 +63,6 @@ def spawn_enemies(num):
 
 
 while running:
-    # Y en el bucle de juego reemplaza screen.fill por esto:
     draw_background(screen)
     keys = pygame.key.get_pressed()
     events = pygame.event.get()
@@ -82,6 +80,8 @@ while running:
     player.handle_keys()
     player.draw(screen)
 
+    # Game over / Juego terminado
+
     if game_over:
         text = font.render("💀 GAME OVER", True, (255, 0, 0))
         screen.blit(text, (SCREEN_WIDTH // 2 - 150, SCREEN_HEIGHT // 2 - 30))
@@ -89,6 +89,8 @@ while running:
         pygame.time.delay(3000)
         running = False
         continue
+    
+    # Ataque a enemigos y ataques de enemigos
 
     if enemy:
         enemy.update(player.rect)
@@ -107,6 +109,8 @@ while running:
                         chests.append(Chest(enemy.rect.centerx, enemy.rect.centery))
                         enemy = None
 
+    # Cofres
+
     for chest in chests[:]:
         just_opened = chest.update(player.rect, keys)
         chest.draw(screen)
@@ -122,20 +126,21 @@ while running:
         if distance > 500:
             chests.remove(chest)
 
+    # Textos flotantes
+
     for text in floating_texts[:]:
         text.update()
         text.draw(screen)
         if not text.is_alive():
             floating_texts.remove(text)
 
+    # Enemigos extras
+
     distance = ((player.rect.centerx - player_start_pos[0]) ** 2 + (player.rect.centery - player_start_pos[1]) ** 2) ** 0.5
     if distance > 50:
       if len(extra_enemies) == 0:
           extra_enemies.extend(spawn_enemies(2))
-          # Reinicia el punto de referencia para que más enemigos aparezcan después de otros 150 px
           player_start_pos = player.rect.center
-
-
 
     for e in extra_enemies[:]:
         e.update(player.rect)
@@ -167,6 +172,7 @@ while running:
         "I: Inventario"
     ]
 
+    # Mostrar controles
     for i, text in enumerate(controls):
         rendered = font_small.render(text, True, (200, 200, 200))
         screen.blit(rendered, (10, 10 + i * 20))

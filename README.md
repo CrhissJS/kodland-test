@@ -1,4 +1,4 @@
-# Jardín de los Secretos / Garden of Secrets (Hecho con PyGame)
+# Jardín de los Secretos / Garden of Secrets (Hecho con Pygame)
 
 Este es un juego desarrollado con **PyGame**, donde el jugador puede explorar, combatir enemigos, abrir cofres y equipar distintos objetos como armas, armaduras y zapatos que afectan sus estadísticas. Cuenta con interfaz de inventario, sistema de aparición progresiva de enemigos, animaciones básicas y una experiencia fluida sin necesidad de imágenes externas.
 

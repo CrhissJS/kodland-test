@@ -2,10 +2,9 @@ import pygame
 
 class Chest:
     def __init__(self, x, y):
-        # Cargar los frames individuales desde la carpeta assets/chests/frames/
         self.frames = [
             pygame.image.load(f"assets/chests/frames/chest_{i}.png").convert_alpha()
-            for i in range(8)  # asumiendo que tienes del chest_0 al chest_7
+            for i in range(8)
         ]
 
         self.frame_index = 0

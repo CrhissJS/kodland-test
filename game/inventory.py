@@ -9,8 +9,8 @@ class Inventory:
         self.equipped = {"arma": None, "armadura": None, "zapatos": None}
         self.menu_open = False
         self.menu = None
-        self.notifications = []  # (mensaje, tiempo)
-        self.player = player  # Referencia al jugador
+        self.notifications = []
+        self.player = player
 
     def add_item(self, category, item_name):
         if item_name not in self.items[category]:
@@ -29,7 +29,6 @@ class Inventory:
         self.apply_stats()
 
     def apply_stats(self):
-        # Reinicia stats base
         self.player.attack = 5
         self.player.speed = 5
         self.player.defense = 0

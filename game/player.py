@@ -23,16 +23,13 @@ class Player:
         if keys[pygame.K_DOWN] or keys[pygame.K_s]:
             self.rect.y += self.speed
 
-        # Limites
         self.rect.x = max(0, min(self.rect.x, SCREEN_WIDTH - self.rect.width))
         self.rect.y = max(0, min(self.rect.y, SCREEN_HEIGHT - self.rect.height))
 
     def draw(self, screen):
-        # Sombra
+        # Dibujar el jugador
         pygame.draw.circle(screen, (50, 50, 50), self.rect.center, self.radius + 2)
-        # Brillo borde
         pygame.draw.circle(screen, (0, 200, 150), self.rect.center, self.radius, 2)
-        # Centro
         pygame.draw.circle(screen, (0, 255, 180), self.rect.center, self.radius - 2)
 
         # Nombre

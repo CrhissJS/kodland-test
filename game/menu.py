@@ -16,22 +16,20 @@ def main_menu(screen):
         nonlocal running
         running = False
 
-    # 🌈 Personalizar tema
     theme = pygame_menu.themes.THEME_DARK.copy()
-    theme.widget_font = pygame_menu.font.FONT_NEVIS  # Fuente distinta (puedes cambiarla)
+    theme.widget_font = pygame_menu.font.FONT_NEVIS
     theme.title_font_size = 30
     theme.title_font_color = (200, 200, 255)
     theme.widget_font_size = 30
     theme.widget_margin = (25, 15)
-    theme.background_color = (30, 30, 60)  # azul oscuro mágico
-    theme.selection_color = (100, 100, 255)  # color de selección
+    theme.background_color = (30, 30, 60)
+    theme.selection_color = (100, 100, 255)
 
     menu = pygame_menu.Menu(GAME_TITLE, SCREEN_WIDTH, SCREEN_HEIGHT, theme=theme)
     menu.add.text_input('Nombre: ', default='Jugador', onchange=set_name)
     menu.add.button('Jugar', start_the_game)
     menu.add.button('Salir', pygame_menu.events.EXIT)
 
-    # 🎨 Fondo opcional con gradiente
     def draw_background(surface):
         surface.fill((10, 10, 30))
         for i in range(0, SCREEN_HEIGHT, 10):
