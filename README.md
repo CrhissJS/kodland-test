@@ -35,7 +35,7 @@ Este es un juego desarrollado con **Pygame**, donde el jugador combatir enemigos
 ## Ejecución del juego
 
 Para ejecutar el juego, simplemente corre el archivo main.py desde la terminal:
-`python main.py`
+`py main.py o python main.py`
 
 ## Estructura del proyecto
 
