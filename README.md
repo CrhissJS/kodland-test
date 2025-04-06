@@ -23,12 +23,6 @@ Este es un juego desarrollado con **Pygame**, donde el jugador combatir enemigos
   - `pygame-menu`
   - `pygame_gui`
 
-Puedes generar un archivo con las dependencias del entorno virtual ejecutando:
-
-```bash
-pip freeze > requirements.txt
-```
-
 ## Instalación
 
 - 1. Clona este repositorio:
@@ -36,7 +30,7 @@ pip freeze > requirements.txt
      `cd aventura-pygame`
 
 - 2. Instala las dependencias necesarias:
-     `pip install pygame pygame-menu pygame_gui`
+     `pip install -r requirements.txt`
 
 ## Ejecución del juego
 
