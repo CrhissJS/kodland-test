@@ -1,6 +1,6 @@
 # Jardín de los Secretos / Garden of Secrets (Hecho con PyGame)
 
-Este es un juego desarrollado con **PyGame**, donde el jugador puede explorar, combatir enemigos, abrir cofres y equipar distintos objetos como armas, armaduras y zapatos que afectan sus estadísticas. Cuenta con interfaz de inventario, sistema de aparición progresiva de enemigos, animaciones básicas y una experiencia fluida sin necesidad de imágenes externas.
+Este es un juego desarrollado con **Pygame**, donde el jugador combatir enemigos, abrir cofres y equipar distintos objetos como armas, armaduras y zapatos que afectan sus estadísticas. Cuenta con interfaz de inventario, sistema de aparición progresiva de enemigos, animaciones básica en los cofres que sueltan los enemigos y una experiencia fluida sin necesidad de imágenes externas.
 
 ---
 
@@ -12,7 +12,6 @@ Este es un juego desarrollado con **PyGame**, donde el jugador puede explorar, c
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Características del juego](#características-del-juego)
 - [Controles](#controles)
-- [Créditos](#créditos)
 
 ---
 
@@ -33,7 +32,7 @@ pip freeze > requirements.txt
 ## Instalación
 
 - 1. Clona este repositorio:
-     `git clone https://github.com/tu-usuario/aventura-pygame.git`
+     `git clone https://github.com/CrhissJS/kodland-test.git`
      `cd aventura-pygame`
 
 - 2. Instala las dependencias necesarias:
